@@ -5,424 +5,285 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SpringBoard — Privacy Policy</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #f7f8fa;
-    --surface: #ffffff;
-    --border: #e2e6ec;
-    --text: #1a1f2e;
-    --muted: #5a6478;
-    --accent: #2b5ce6;
-    --accent-light: #eef2fd;
-    --warn: #b34000;
-    --warn-bg: #fff5ef;
-  }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-    padding: 2rem 1rem 4rem;
-  }
-
-  .page {
-    max-width: 780px;
-    margin: 0 auto;
-  }
-
-  /* Header */
-  .doc-header {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 2.5rem 3rem;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-  .doc-header-logo {
-    width: 48px;
-    height: 48px;
-    background: var(--accent);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .doc-header-logo svg { fill: #fff; width: 26px; height: 26px; }
-  .doc-header-text h1 {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--text);
-  }
-  .doc-header-text .subtitle {
-    font-size: 0.82rem;
-    color: var(--muted);
-    margin-top: 0.3rem;
-  }
-  .doc-header-text .subtitle strong { color: var(--text); font-weight: 500; }
-
-  /* Table of contents */
-  .toc {
-    background: var(--accent-light);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 8px 8px 0;
-    padding: 1.4rem 1.8rem;
-    margin-bottom: 2rem;
-  }
-  .toc h2 {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.9rem;
-  }
-  .toc ol {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.25rem 2rem;
-  }
-  .toc li a {
-    font-size: 0.83rem;
-    color: var(--accent);
-    text-decoration: none;
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-  }
-  .toc li a:hover { text-decoration: underline; }
-  .toc li a .toc-num {
-    font-size: 0.7rem;
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-    min-width: 1.4rem;
-  }
-  @media (max-width: 540px) { .toc ol { grid-template-columns: 1fr; } }
-
-  /* Content card */
-  .content {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 2.5rem 3rem;
-  }
-  @media (max-width: 640px) {
-    .doc-header { padding: 1.8rem; flex-direction: column; gap: 1rem; }
-    .content { padding: 1.8rem; }
-  }
-
-  /* Sections */
-  .section { margin-bottom: 2.8rem; }
-  .section:last-child { margin-bottom: 0; }
-
-  h2.sec-title {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.55rem;
-    margin-bottom: 1.1rem;
-    display: flex;
-    align-items: baseline;
-    gap: 0.7rem;
-  }
-  h2.sec-title .sec-num {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 0.1rem 0.45rem;
-    border-radius: 4px;
-  }
-
-  h3.sub-title {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--text);
-    margin: 1.4rem 0 0.5rem;
-  }
-
-  p { margin-bottom: 0.85rem; color: var(--text); }
-  p:last-child { margin-bottom: 0; }
-
-  ul, ol { padding-left: 1.4rem; margin-bottom: 0.85rem; }
-  li { margin-bottom: 0.35rem; }
-  li:last-child { margin-bottom: 0; }
-  li strong { font-weight: 600; }
-
-  /* Highlight boxes */
-  .note {
-    background: var(--accent-light);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 6px 6px 0;
-    padding: 0.9rem 1.1rem;
-    margin: 1rem 0;
-    font-size: 0.88rem;
-    color: var(--text);
-  }
-
-  /* Footer */
-  .doc-footer {
-    margin-top: 2rem;
-    padding: 1.2rem 1.5rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
-  .doc-footer a { color: var(--accent); text-decoration: none; }
-  @media (max-width: 540px) { .doc-footer { flex-direction: column; gap: 0.4rem; text-align: center; } }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f8fa;--surface:#fff;--border:#e2e6ec;--text:#1a1f2e;--muted:#5a6478;--accent:#2b5ce6;--accent-light:#eef2fd;--warn:#b34000;--warn-bg:#fff5ef}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:15px;line-height:1.7;padding:2rem 1rem 4rem}
+.page{max-width:780px;margin:0 auto}
+.doc-header{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:2.5rem 3rem;margin-bottom:2rem;display:flex;align-items:flex-start;gap:2rem}
+.doc-header-logo{width:48px;height:48px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.doc-header-logo svg{fill:#fff;width:26px;height:26px}
+.doc-header-text h1{font-family:'Lora',Georgia,serif;font-size:1.6rem;font-weight:600;letter-spacing:-.01em}
+.doc-header-text .subtitle{font-size:.82rem;color:var(--muted);margin-top:.3rem}
+.doc-header-text .subtitle strong{color:var(--text);font-weight:500}
+.toc{background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.4rem 1.8rem;margin-bottom:2rem}
+.toc h2{font-size:.72rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+.toc ol{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.25rem 2rem;padding:0;margin:0}
+.toc li a{font-size:.83rem;color:var(--accent);text-decoration:none;display:flex;align-items:baseline;gap:.5rem}
+.toc li a:hover{text-decoration:underline}
+.toc li a .toc-num{font-size:.7rem;color:var(--muted);font-variant-numeric:tabular-nums;min-width:1.4rem}
+@media(max-width:540px){.toc ol{grid-template-columns:1fr}}
+.content{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:2.5rem 3rem}
+@media(max-width:640px){.doc-header{padding:1.8rem;flex-direction:column;gap:1rem}.content{padding:1.8rem}}
+.section{margin-bottom:2.8rem}.section:last-child{margin-bottom:0}
+h2.sec-title{font-family:'Lora',Georgia,serif;font-size:1.1rem;font-weight:600;border-bottom:1px solid var(--border);padding-bottom:.55rem;margin-bottom:1.1rem;display:flex;align-items:baseline;gap:.7rem}
+h2.sec-title .sec-num{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;color:var(--accent);background:var(--accent-light);padding:.1rem .45rem;border-radius:4px}
+h3.sub-title{font-size:.88rem;font-weight:600;margin:1.4rem 0 .5rem}
+p{margin-bottom:.85rem}p:last-child{margin-bottom:0}
+ul,ol{padding-left:1.4rem;margin-bottom:.85rem}
+li{margin-bottom:.35rem}li:last-child{margin-bottom:0}
+li strong{font-weight:600}
+.note{background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:.9rem 1.1rem;margin:1rem 0;font-size:.88rem}
+.warn{background:var(--warn-bg);border-left:3px solid var(--warn);border-radius:0 6px 6px 0;padding:.9rem 1.1rem;margin:1rem 0;font-size:.88rem}
+.doc-footer{margin-top:2rem;padding:1.2rem 1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--muted)}
+.doc-footer a{color:var(--accent);text-decoration:none}
+@media(max-width:540px){.doc-footer{flex-direction:column;gap:.4rem;text-align:center}}
 </style>
 </head>
 <body>
 <div class="page">
 
-  <header class="doc-header">
-    <div class="doc-header-logo">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2zm0 4l6 3.3V12c0 3.77-2.58 7.3-6 8.58C8.58 19.3 6 15.77 6 12V9.3L12 6z"/>
-      </svg>
-    </div>
-    <div class="doc-header-text">
-      <h1>Privacy Policy</h1>
-      <p class="subtitle"><strong>SpringBoard</strong> &nbsp;·&nbsp; Effective Date: <strong>6 September 2026</strong> &nbsp;·&nbsp; Last updated: 6 September 2026</p>
-    </div>
-  </header>
+<header class="doc-header">
+<div class="doc-header-logo"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2zm0 4l6 3.3V12c0 3.77-2.58 7.3-6 8.58C8.58 19.3 6 15.77 6 12V9.3L12 6z"/></svg></div>
+<div class="doc-header-text">
+<h1>Privacy Policy</h1>
+<p class="subtitle"><strong>SpringBoard</strong> &nbsp;·&nbsp; Effective Date: <strong>18 October 2026</strong> &nbsp;·&nbsp; Last updated: <strong>18 October 2026</strong></p>
+</div>
+</header>
 
-  <nav class="toc">
-    <h2>Contents</h2>
-    <ol>
-      <li><a href="#s1"><span class="toc-num">1</span>Introductory Provisions</a></li>
-      <li><a href="#s2"><span class="toc-num">2</span>Definitions</a></li>
-      <li><a href="#s3"><span class="toc-num">3</span>Controller Identity</a></li>
-      <li><a href="#s4"><span class="toc-num">4</span>Personal Data Collected</a></li>
-      <li><a href="#s5"><span class="toc-num">5</span>Purposes &amp; Legal Bases</a></li>
-      <li><a href="#s6"><span class="toc-num">6</span>Processors &amp; Transfers</a></li>
-      <li><a href="#s7"><span class="toc-num">7</span>Data Retention</a></li>
-      <li><a href="#s8"><span class="toc-num">8</span>Rights of Data Subjects</a></li>
-      <li><a href="#s9"><span class="toc-num">9</span>Local Storage</a></li>
-      <li><a href="#s10"><span class="toc-num">10</span>Protection of Minors</a></li>
-      <li><a href="#s11"><span class="toc-num">11</span>Security Measures</a></li>
-      <li><a href="#s12"><span class="toc-num">12</span>Changes to Policy</a></li>
-      <li><a href="#s13"><span class="toc-num">13</span>Governing Law</a></li>
-    </ol>
-  </nav>
+<nav class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#s1"><span class="toc-num">1</span>Introductory Provisions</a></li>
+<li><a href="#s2"><span class="toc-num">2</span>Definitions</a></li>
+<li><a href="#s3"><span class="toc-num">3</span>Controller Identity</a></li>
+<li><a href="#s4"><span class="toc-num">4</span>Personal Data Collected</a></li>
+<li><a href="#s5"><span class="toc-num">5</span>Purposes &amp; Legal Bases</a></li>
+<li><a href="#s6"><span class="toc-num">6</span>Processors &amp; Transfers</a></li>
+<li><a href="#s7"><span class="toc-num">7</span>Data Retention</a></li>
+<li><a href="#s8"><span class="toc-num">8</span>Rights of Data Subjects</a></li>
+<li><a href="#s9"><span class="toc-num">9</span>Local Storage</a></li>
+<li><a href="#s10"><span class="toc-num">10</span>Protection of Minors</a></li>
+<li><a href="#s11"><span class="toc-num">11</span>Security Measures</a></li>
+<li><a href="#s12"><span class="toc-num">12</span>Changes to Policy</a></li>
+<li><a href="#s13"><span class="toc-num">13</span>Governing Law</a></li>
+</ol>
+</nav>
 
-  <main class="content">
+<main class="content">
 
-    <section class="section" id="s1">
-      <h2 class="sec-title"><span class="sec-num">1</span>Introductory Provisions and Scope</h2>
-      <p>This Privacy Policy (the "Policy") sets forth the principles and conditions governing the collection, storage, processing, and transfer of Personal Data of Users of the SpringBoard mobile application (the "Application"). The Policy has been prepared in compliance with:</p>
-      <ul>
-        <li>Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data ("GDPR");</li>
-        <li>Regulation (EU) 2022/2065 of the European Parliament and of the Council of 19 October 2022 on a Single Market For Digital Services ("Digital Services Act" / "DSA");</li>
-        <li>Applicable provisions of Polish civil law; and</li>
-        <li>Platform policies of Google Play Console and Apple App Store.</li>
-      </ul>
-      <p>This Policy applies to all natural persons who install, access, or otherwise use the Application, irrespective of their jurisdiction of residence, to the extent permitted by applicable mandatory law.</p>
-    </section>
+<section class="section" id="s1">
+<h2 class="sec-title"><span class="sec-num">1</span>Introductory Provisions and Scope</h2>
+<p>This Privacy Policy (the "Policy") sets forth the principles and conditions governing the collection, storage, processing, and transfer of Personal Data of Users of the SpringBoard mobile application (the "Application"). The Policy has been prepared in compliance with:</p>
+<ul>
+<li>Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data ("GDPR");</li>
+<li>Regulation (EU) 2022/2065 of the European Parliament and of the Council of 19 October 2022 on a Single Market For Digital Services ("Digital Services Act" / "DSA");</li>
+<li>Applicable provisions of Polish civil law; and</li>
+<li>Platform policies of Google Play Console and Apple App Store.</li>
+</ul>
+<p>This Policy applies to all natural persons who install, access, or otherwise use the Application, irrespective of their jurisdiction of residence, to the extent permitted by applicable mandatory law.</p>
+</section>
 
-    <section class="section" id="s2">
-      <h2 class="sec-title"><span class="sec-num">2</span>Definitions</h2>
-      <p>For the purposes of this Policy, the following terms shall bear the meanings ascribed to them below:</p>
-      <ul>
-        <li><strong>"Controller"</strong> means the natural or legal person who, alone or jointly with others, determines the purposes and means of processing of Personal Data. For the purposes of this Policy, the Controller is Kamil Mazurkiewicz, reachable at: kmdevworks.contact@gmail.com.</li>
-        <li><strong>"Application"</strong> means the SpringBoard mobile software application, including all versions, updates, modules, and embedded features thereof, distributed via Google Play Store and Apple App Store.</li>
-        <li><strong>"User"</strong> means any natural person who creates an Account or otherwise uses the Application, acting in their personal capacity.</li>
-        <li><strong>"Account"</strong> means the individual access profile created by the User upon registration, enabling access to the personalised features of the Application.</li>
-        <li><strong>"Personal Data"</strong> means any information relating to an identified or identifiable natural person, as defined in Article 4(1) GDPR.</li>
-        <li><strong>"AI Services"</strong> means the artificial-intelligence-powered analytical and informational features of the Application, operated via Google Cloud / Google AI Studio (Gemini API), including but not limited to training load analysis, fatigue estimation, and workout plan generation.</li>
-        <li><strong>"User Content"</strong> means all data, texts, parameters, and configurations inputted into the Application by the User, including anthropometric parameters, training logs, plan structures, and chat conversations.</li>
-        <li><strong>"Processor"</strong> means a natural or legal person, public authority, agency, or other body which processes Personal Data on behalf of the Controller, including Supabase Inc. and Google LLC in their respective capacities.</li>
-        <li><strong>"Sub-processor"</strong> means a third party engaged by a Processor to perform specific processing activities on behalf of the Controller.</li>
-        <li><strong>"Services"</strong> means all functionalities made available through the Application, including the Free Plan and the Premium Plan subscription tier.</li>
-        <li><strong>"Third Country"</strong> means any country outside the European Economic Area (EEA) that has not been the subject of an adequacy decision by the European Commission pursuant to Article 45 GDPR.</li>
-      </ul>
-    </section>
+<section class="section" id="s2">
+<h2 class="sec-title"><span class="sec-num">2</span>Definitions</h2>
+<p>For the purposes of this Policy, the following terms shall bear the meanings ascribed to them below:</p>
+<ul>
+<li><strong>"Controller"</strong> means the natural or legal person who, alone or jointly with others, determines the purposes and means of processing of Personal Data. For the purposes of this Policy, the Controller is Kamil Mazurkiewicz, reachable at: kmdevworks.contact@gmail.com.</li>
+<li><strong>"Application"</strong> means the SpringBoard mobile software application, including all versions, updates, modules, and embedded features thereof, distributed via Google Play Store and Apple App Store.</li>
+<li><strong>"User"</strong> means any natural person who creates an Account or otherwise uses the Application, acting in their personal capacity.</li>
+<li><strong>"Account"</strong> means the individual access profile created by the User upon registration, enabling access to the personalised features of the Application.</li>
+<li><strong>"Personal Data"</strong> means any information relating to an identified or identifiable natural person, as defined in Article 4(1) GDPR.</li>
+<li><strong>"AI Services"</strong> means the artificial-intelligence-powered analytical and informational features of the Application, including but not limited to training load analysis, fatigue estimation, workout plan generation, and the AI trainer chat. The AI Services are powered by large language models provided by the following AI Providers: (i) Google LLC (Google Cloud / Google AI Studio, Gemini API) and (ii) DeepSeek [<em>specify the exact provider/entity and access route, see Section 6.3</em>].</li>
+<li><strong>"AI Providers"</strong> means the third-party providers of language models used to deliver the AI Services, as listed in Section 6.</li>
+<li><strong>"User Content"</strong> means all data, texts, parameters, and configurations inputted into the Application by the User, including anthropometric parameters, training logs, plan structures, and chat conversations.</li>
+<li><strong>"Processor"</strong> means a natural or legal person, public authority, agency, or other body which processes Personal Data on behalf of the Controller, including Supabase Inc. and the AI Providers in their respective capacities.</li>
+<li><strong>"Sub-processor"</strong> means a third party engaged by a Processor to perform specific processing activities on behalf of the Controller.</li>
+<li><strong>"Services"</strong> means all functionalities made available through the Application, including the Free Plan and the Premium Plan subscription tier.</li>
+<li><strong>"Third Country"</strong> means any country outside the European Economic Area (EEA) that has not been the subject of an adequacy decision by the European Commission pursuant to Article 45 GDPR.</li>
+</ul>
+</section>
 
-    <section class="section" id="s3">
-      <h2 class="sec-title"><span class="sec-num">3</span>Identity and Contact Details of the Controller</h2>
-      <p>The Controller of Personal Data processed in connection with the use of the Application is: <strong>Kamil Mazurkiewicz</strong>, conducting business activity under the trade name SpringBoard, contactable at: <strong>kmdevworks.contact@gmail.com</strong>.</p>
-      <p>Users may contact the Controller in all matters concerning the processing of their Personal Data, exercise of data subject rights, and lodging of complaints, using the electronic mail address stated above. The Controller undertakes to respond to correspondence relating to data protection matters within thirty (30) calendar days of receipt.</p>
-    </section>
+<section class="section" id="s3">
+<h2 class="sec-title"><span class="sec-num">3</span>Identity and Contact Details of the Controller</h2>
+<p>The Controller of Personal Data processed in connection with the use of the Application is: <strong>Kamil Mazurkiewicz</strong>, conducting business activity under the trade name SpringBoard, contactable at: <strong>kmdevworks.contact@gmail.com</strong>.</p>
+<p>Users may contact the Controller in all matters concerning the processing of their Personal Data, exercise of data subject rights, and lodging of complaints, using the electronic mail address stated above. The Controller undertakes to respond to correspondence relating to data protection matters within thirty (30) calendar days of receipt.</p>
+</section>
 
-    <section class="section" id="s4">
-      <h2 class="sec-title"><span class="sec-num">4</span>Categories of Personal Data Collected</h2>
+<section class="section" id="s4">
+<h2 class="sec-title"><span class="sec-num">4</span>Categories of Personal Data Collected</h2>
 
-      <h3 class="sub-title">4.1 Identification and Authentication Data</h3>
-      <ul>
-        <li>Electronic mail address (e-mail), used as the primary Account identifier;</li>
-        <li>Cryptographic hash of the User's password (stored exclusively in hashed form; the Controller does not retain plaintext passwords);</li>
-        <li>Account creation timestamp and last-authentication metadata.</li>
-      </ul>
+<h3 class="sub-title">4.1 Identification and Authentication Data</h3>
+<ul>
+<li>Electronic mail address (e-mail), used as the primary Account identifier;</li>
+<li>Cryptographic hash of the User's password (stored exclusively in hashed form; the Controller does not retain plaintext passwords);</li>
+<li>Account creation timestamp and last-authentication metadata.</li>
+</ul>
 
-      <h3 class="sub-title">4.2 Anthropometric and Training Data</h3>
-      <ul>
-        <li>Body mass, height, and derived biometric parameters (e.g., body mass index) where voluntarily provided;</li>
-        <li>Exercise logs: exercise names, sets, repetitions, loads (in kilograms or pounds), and rest intervals;</li>
-        <li>User-defined workout plan architectures, training blocks, and periodisation schemes;</li>
-        <li>Dynamic indicators of central nervous system (CNS) fatigue and per-muscle-group recovery status, as calculated by the Application's algorithms on the basis of User-inputted training data.</li>
-      </ul>
+<h3 class="sub-title">4.2 Anthropometric and Training Data</h3>
+<ul>
+<li>Body mass, height, and derived biometric parameters (e.g., body mass index) where voluntarily provided;</li>
+<li>Exercise logs: exercise names, sets, repetitions, loads (in kilograms or pounds), and rest intervals;</li>
+<li>User-defined workout plan architectures, training blocks, and periodisation schemes;</li>
+<li>Dynamic indicators of central nervous system (CNS) fatigue and per-muscle-group recovery status, as calculated by the Application's algorithms on the basis of User-inputted training data.</li>
+</ul>
 
-      <h3 class="sub-title">4.3 AI Services Interaction Data</h3>
-      <ul>
-        <li>Textual content of conversational queries submitted to the AI Services (chat metadata);</li>
-        <li>AI-generated responses stored for continuity of the User session;</li>
-        <li>Aggregated usage metrics relating to the daily interaction volume limit applicable under the Free Plan.</li>
-      </ul>
+<h3 class="sub-title">4.3 AI Services Interaction Data</h3>
+<ul>
+<li>Textual content of conversational queries submitted to the AI Services (chat metadata);</li>
+<li>AI-generated responses stored for continuity of the User session;</li>
+<li>Aggregated usage metrics relating to the daily interaction volume limits applicable under the Free Plan and the Premium Plan.</li>
+</ul>
+<div class="warn">Please do not enter into the AI chat any information that is not necessary to obtain training advice, in particular data concerning your health, medical conditions, or other sensitive matters, nor data of other persons. Content you type into the chat is transmitted to the AI Providers as described in Section 6.</div>
 
-      <h3 class="sub-title">4.4 Technical and Device Data</h3>
-      <ul>
-        <li>Anonymised or pseudonymised application session logs stored on Supabase infrastructure;</li>
-        <li>User interface cache data and query-limit identifiers stored in SharedPreferences / Local Storage on the User's device (persisted locally; not transmitted to the Controller's servers);</li>
-        <li>Application version, operating system type and version, and device locale settings.</li>
-      </ul>
+<h3 class="sub-title">4.4 Technical and Device Data</h3>
+<ul>
+<li>Anonymised or pseudonymised application session logs stored on Supabase infrastructure;</li>
+<li>User interface cache data and query-limit identifiers stored in SharedPreferences / Local Storage on the User's device (persisted locally; not transmitted to the Controller's servers);</li>
+<li>Application version, operating system type and version, and device locale settings.</li>
+</ul>
 
-      <h3 class="sub-title">4.5 Data Not Collected</h3>
-      <p>The Controller expressly does not collect: precise geolocation data; payment card or banking details (subscription payments are processed exclusively by Google Play Billing or Apple In-App Purchase, as applicable, and the Controller receives only a non-sensitive transaction confirmation); biometric identifiers within the meaning of Article 9 GDPR; or any data relating to minors under the age of sixteen (16).</p>
-    </section>
+<h3 class="sub-title">4.5 Data Not Collected</h3>
+<p>The Controller expressly does not collect: precise geolocation data; payment card or banking details (subscription payments are processed exclusively by Google Play Billing or Apple In-App Purchase, as applicable, and the Controller receives only a non-sensitive transaction confirmation); biometric identifiers within the meaning of Article 9 GDPR; or any data relating to minors under the age of sixteen (16).</p>
+</section>
 
-    <section class="section" id="s5">
-      <h2 class="sec-title"><span class="sec-num">5</span>Purposes and Legal Bases for Processing</h2>
-      <p>The Controller processes Personal Data for the following purposes and on the following legal bases pursuant to Article 6 GDPR:</p>
+<section class="section" id="s5">
+<h2 class="sec-title"><span class="sec-num">5</span>Purposes and Legal Bases for Processing</h2>
+<p>The Controller processes Personal Data for the following purposes and on the following legal bases pursuant to Article 6 GDPR:</p>
 
-      <h3 class="sub-title">5.1 Performance of a Contract (Article 6(1)(b) GDPR)</h3>
-      <ul>
-        <li>Creation, maintenance, and authentication of the User's Account;</li>
-        <li>Provision of the core features of the Application, including workout tracking and AI Services;</li>
-        <li>Administration of the Free Plan and Premium Plan subscription, including enforcement of daily AI interaction limits.</li>
-      </ul>
+<h3 class="sub-title">5.1 Performance of a Contract (Article 6(1)(b) GDPR)</h3>
+<ul>
+<li>Creation, maintenance, and authentication of the User's Account;</li>
+<li>Provision of the core features of the Application, including workout tracking and AI Services, including the transmission of User Content to the AI Providers for the purpose of generating responses;</li>
+<li>Administration of the Free Plan and Premium Plan subscription, including enforcement of daily AI interaction limits.</li>
+</ul>
 
-      <h3 class="sub-title">5.2 Legitimate Interests of the Controller (Article 6(1)(f) GDPR)</h3>
-      <ul>
-        <li>Detection, investigation, and prevention of fraudulent activity, abuse, and violations of the Terms of Service;</li>
-        <li>Ensuring the technical security and operational integrity of the Application and its infrastructure;</li>
-        <li>Aggregated, anonymised statistical analysis for the purpose of improving Application features, provided such analysis does not permit re-identification of individual Users.</li>
-      </ul>
+<h3 class="sub-title">5.2 Legitimate Interests of the Controller (Article 6(1)(f) GDPR)</h3>
+<ul>
+<li>Detection, investigation, and prevention of fraudulent activity, abuse, and violations of the Terms of Service;</li>
+<li>Ensuring the technical security and operational integrity of the Application and its infrastructure;</li>
+<li>Aggregated, anonymised statistical analysis for the purpose of improving Application features, provided such analysis does not permit re-identification of individual Users.</li>
+</ul>
 
-      <h3 class="sub-title">5.3 Compliance with Legal Obligations (Article 6(1)(c) GDPR)</h3>
-      <ul>
-        <li>Retention of data required by applicable tax, accounting, and consumer protection legislation;</li>
-        <li>Response to lawful requests of competent public authorities.</li>
-      </ul>
+<h3 class="sub-title">5.3 Compliance with Legal Obligations (Article 6(1)(c) GDPR)</h3>
+<ul>
+<li>Retention of data required by applicable tax, accounting, and consumer protection legislation;</li>
+<li>Response to lawful requests of competent public authorities.</li>
+</ul>
 
-      <h3 class="sub-title">5.4 Consent (Article 6(1)(a) GDPR)</h3>
-      <p>Where the Controller sends optional electronic communications (e.g., product newsletters), solely on the basis of the User's freely given, specific, informed, and unambiguous consent, which may be withdrawn at any time without detriment.</p>
-    </section>
+<h3 class="sub-title">5.4 Consent (Article 6(1)(a) and Article 49(1)(a) GDPR)</h3>
+<p>Where the Controller sends optional electronic communications (e.g., product newsletters), solely on the basis of the User's freely given, specific, informed, and unambiguous consent, which may be withdrawn at any time without detriment.</p>
+<p>Where User Content is transmitted to an AI Provider located in a Third Country in respect of which no adequacy decision exists (see Section 6.3), such transmission takes place on the basis of the User's explicit consent given in the Application before first use of the relevant AI feature. The User may withdraw this consent at any time by ceasing to use the relevant AI feature or by contacting the Controller, without prejudice to the lawfulness of processing carried out before withdrawal.</p>
+</section>
 
-    <section class="section" id="s6">
-      <h2 class="sec-title"><span class="sec-num">6</span>Data Processors and International Transfers</h2>
+<section class="section" id="s6">
+<h2 class="sec-title"><span class="sec-num">6</span>Data Processors and International Transfers</h2>
 
-      <h3 class="sub-title">6.1 Supabase Inc.</h3>
-      <p>The Controller has engaged Supabase Inc. (548 Market St PMB 72296, San Francisco, CA 94104, USA) as a data Processor for the following purposes: hosting and storage of Account identification data and training logs; user authentication and session management; and retention of application-level log data. Data processing by Supabase Inc. is governed by a Data Processing Agreement (DPA) incorporating the Standard Contractual Clauses (SCCs) adopted by European Commission Implementing Decision (EU) 2021/914 of 4 June 2021, constituting an appropriate safeguard for transfers to a Third Country pursuant to Article 46(2)(c) GDPR.</p>
+<h3 class="sub-title">6.1 Supabase Inc.</h3>
+<p>The Controller has engaged Supabase Inc. (548 Market St PMB 72296, San Francisco, CA 94104, USA) as a data Processor for the following purposes: hosting and storage of Account identification data and training logs; user authentication and session management; and retention of application-level log data. Data processing by Supabase Inc. is governed by a Data Processing Agreement (DPA) incorporating the Standard Contractual Clauses (SCCs) adopted by European Commission Implementing Decision (EU) 2021/914 of 4 June 2021, constituting an appropriate safeguard for transfers to a Third Country pursuant to Article 46(2)(c) GDPR.</p>
 
-      <h3 class="sub-title">6.2 Google LLC (Google Cloud / AI Studio — Gemini API)</h3>
-      <p>The Controller utilises Google Cloud infrastructure and the Google AI Studio Gemini API, operated by Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA), for the processing of User Content and associated metadata transmitted to the AI Services via serverless Edge Functions. The Controller expressly warrants that:</p>
-      <ul>
-        <li>User Content transmitted to the Gemini API is not used for the training of publicly available large language models (LLMs);</li>
-        <li>Data transmission occurs exclusively pursuant to the applicable Google Cloud Data Processing Addendum, which incorporates SCCs as the appropriate transfer mechanism under Article 46 GDPR.</li>
-      </ul>
+<h3 class="sub-title">6.2 Google LLC (Google Cloud / AI Studio — Gemini API)</h3>
+<p>For selected AI Services, the Controller utilises Google Cloud infrastructure and the Google AI Studio Gemini API, operated by Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA), for the processing of User Content and associated metadata transmitted via serverless Edge Functions. The Controller warrants that:</p>
+<ul>
+<li>User Content transmitted to the Gemini API is not used for the training of publicly available large language models (LLMs);</li>
+<li>Data transmission occurs exclusively pursuant to the applicable Google Cloud Data Processing Addendum, which incorporates SCCs as the appropriate transfer mechanism under Article 46 GDPR.</li>
+</ul>
 
-      <h3 class="sub-title">6.3 Local Device Storage</h3>
-      <p>Certain non-personal or pseudonymised data — specifically, user interface preference settings, interface cache, and session-independent query-limit counters — are stored exclusively in SharedPreferences (Android) or equivalent Local Storage mechanisms (iOS) on the User's physical device. Such data does not leave the device and is not transmitted to the Controller or any Processor.</p>
+<h3 class="sub-title">6.3 DeepSeek</h3>
+<p>For selected AI Services (including [<em>specify, e.g. the "Fast" and/or "Thinking" modes of the AI trainer</em>]), the Controller utilises DeepSeek language models provided by [<em>provider entity and address, e.g. Hangzhou DeepSeek Artificial Intelligence Co., Ltd., China, OR the name of the hosting provider if the models are run through a third-party infrastructure provider, with its location</em>]. User Content (the text of the User's query, and the training context necessary to answer it) is transmitted to this provider through serverless Edge Functions of the Controller.</p>
+<p><strong>Transfer to a Third Country.</strong> [<em>Choose the variant that is true and delete the other:</em>]</p>
+<ul>
+<li>[<em>Variant A, direct DeepSeek API:</em>] The provider processes data on servers located in the People's Republic of China, which is a Third Country for which the European Commission has not issued an adequacy decision. The laws of that country may allow public authorities access to data held by the provider, and the level of protection may differ from that guaranteed in the EEA. Transmission therefore takes place on the basis of the User's explicit consent pursuant to Article 49(1)(a) GDPR, as described in Section 5.4. The Controller applies the following measures to limit risk: the Controller does not transmit the User's e-mail address, name, or Account identifier to the provider; only the content necessary to generate a response is sent.</li>
+<li>[<em>Variant B, third-party hosting:</em>] The models are executed on infrastructure operated by [<em>hosting provider</em>] in [<em>EEA / country</em>], under a data processing agreement [<em>and SCCs pursuant to Article 46(2)(c) GDPR, where the infrastructure is located outside the EEA</em>]. No User Content is transmitted to servers of DeepSeek in the People's Republic of China.</li>
+</ul>
+<p><strong>Use of data by the provider.</strong> [<em>State accurately, based on the provider's current terms:</em> whether User Content is retained by the provider and for how long, and whether it is used to train or improve the provider's models.] The Controller does not authorise the use of User Content for the training of publicly available models and, where the provider's terms permit it, has opted out of such use.</p>
+<p>Because the AI Providers process User Content under different conditions, the AI Provider handling a given query depends on the AI feature and mode selected by the User, and may be changed by the Controller from time to time. The current list of AI Providers is always set out in this Section 6.</p>
+<div class="note">AI-generated content is informational only. It does not constitute medical advice and does not replace consultation with a physician or qualified trainer. The Controller does not make decisions producing legal or similarly significant effects on Users solely by automated means within the meaning of Article 22 GDPR.</div>
 
-      <h3 class="sub-title">6.4 Platform Providers</h3>
-      <p>Distribution of the Application via Google Play Store (Google LLC) and Apple App Store (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA) may result in those platform providers processing certain technical metadata in accordance with their own, independent privacy policies. The Controller bears no responsibility for the data processing practices of platform providers acting as independent controllers.</p>
-    </section>
+<h3 class="sub-title">6.4 Local Device Storage</h3>
+<p>Certain non-personal or pseudonymised data — specifically, user interface preference settings, interface cache, and session-independent query-limit counters — are stored exclusively in SharedPreferences (Android) or equivalent Local Storage mechanisms (iOS) on the User's physical device. Such data does not leave the device and is not transmitted to the Controller or any Processor.</p>
 
-    <section class="section" id="s7">
-      <h2 class="sec-title"><span class="sec-num">7</span>Data Retention Periods</h2>
-      <p>Personal Data shall be retained for the following periods:</p>
-      <ul>
-        <li><strong>Account Data:</strong> for the duration of the active Account and for a period of three (3) years following Account deletion, unless a longer retention period is mandated by applicable law (e.g., tax obligations);</li>
-        <li><strong>Training and Anthropometric Data:</strong> for the duration of the active Account; deleted within ninety (90) days of Account deletion upon User request;</li>
-        <li><strong>AI Services Interaction Data (chat metadata):</strong> retained on Supabase servers for a rolling period of twelve (12) months from the date of each interaction, then permanently deleted;</li>
-        <li><strong>Application Log Data:</strong> retained for a period of ninety (90) days for security and debugging purposes, then automatically purged;</li>
-        <li><strong>Data on Local Device Storage:</strong> persisted until the User uninstalls the Application or manually clears Application data through device settings.</li>
-      </ul>
-      <p>Upon expiry of the applicable retention period, Personal Data shall be permanently deleted or irreversibly anonymised in a manner that prevents re-identification.</p>
-    </section>
+<h3 class="sub-title">6.5 Platform Providers</h3>
+<p>Distribution of the Application via Google Play Store (Google LLC) and Apple App Store (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA) may result in those platform providers processing certain technical metadata in accordance with their own, independent privacy policies. The Controller bears no responsibility for the data processing practices of platform providers acting as independent controllers.</p>
+</section>
 
-    <section class="section" id="s8">
-      <h2 class="sec-title"><span class="sec-num">8</span>Rights of Data Subjects</h2>
-      <p>Pursuant to Chapter III GDPR, every User has the following rights with respect to their Personal Data:</p>
-      <ul>
-        <li><strong>Right of Access (Article 15 GDPR):</strong> the right to obtain confirmation as to whether Personal Data are being processed and, if so, to receive a copy thereof.</li>
-        <li><strong>Right to Rectification (Article 16 GDPR):</strong> the right to obtain rectification of inaccurate Personal Data and completion of incomplete data.</li>
-        <li><strong>Right to Erasure / "Right to be Forgotten" (Article 17 GDPR):</strong> the right to obtain erasure of Personal Data where one of the grounds specified in Article 17(1) GDPR applies.</li>
-        <li><strong>Right to Restriction of Processing (Article 18 GDPR):</strong> the right to obtain restriction of processing in the circumstances set out in Article 18(1) GDPR.</li>
-        <li><strong>Right to Data Portability (Article 20 GDPR):</strong> the right to receive Personal Data in a structured, commonly used, and machine-readable format and to transmit it to another controller, where processing is based on consent or contract.</li>
-        <li><strong>Right to Object (Article 21 GDPR):</strong> the right to object, on grounds relating to the User's particular situation, to processing based on legitimate interests.</li>
-        <li><strong>Right to Withdraw Consent (Article 7(3) GDPR):</strong> where processing is based on consent, the right to withdraw such consent at any time, without prejudice to the lawfulness of processing prior to withdrawal.</li>
-        <li><strong>Right to Lodge a Complaint:</strong> the right to lodge a complaint with the President of the Office for Personal Data Protection (Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warsaw, Poland), or with the supervisory authority in the User's Member State of habitual residence.</li>
-      </ul>
-      <div class="note">To exercise any of the above rights, the User should submit a written request to the Controller's e-mail address stated in Section 3. The Controller shall respond within thirty (30) calendar days, or, in complex cases, within a maximum of ninety (90) calendar days, informing the User of any extension and the reasons therefor.</div>
-    </section>
+<section class="section" id="s7">
+<h2 class="sec-title"><span class="sec-num">7</span>Data Retention Periods</h2>
+<p>Personal Data shall be retained for the following periods:</p>
+<ul>
+<li><strong>Account Data:</strong> for the duration of the active Account and for a period of three (3) years following Account deletion, unless a longer retention period is mandated by applicable law (e.g., tax obligations);</li>
+<li><strong>Training and Anthropometric Data:</strong> for the duration of the active Account; deleted within ninety (90) days of Account deletion upon User request;</li>
+<li><strong>AI Services Interaction Data (chat metadata):</strong> retained on Supabase servers for a rolling period of twelve (12) months from the date of each interaction, then permanently deleted;</li>
+<li><strong>Data held by AI Providers:</strong> retained by each AI Provider for the period stated in its terms and in the agreement with the Controller [<em>state the period, if known</em>]. The Controller does not store User Content with AI Providers beyond what is required to deliver a response, to the extent that this is within the Controller's control;</li>
+<li><strong>Application Log Data:</strong> retained for a period of ninety (90) days for security and debugging purposes, then automatically purged;</li>
+<li><strong>Data on Local Device Storage:</strong> persisted until the User uninstalls the Application or manually clears Application data through device settings.</li>
+</ul>
+<p>Upon expiry of the applicable retention period, Personal Data shall be permanently deleted or irreversibly anonymised in a manner that prevents re-identification.</p>
+</section>
 
-    <section class="section" id="s9">
-      <h2 class="sec-title"><span class="sec-num">9</span>Local Storage and Device-Side Data</h2>
-      <p>The Application does not use browser-based cookies. However, it employs the following device-side storage mechanisms:</p>
-      <ul>
-        <li><strong>SharedPreferences (Android) / NSUserDefaults (iOS):</strong> used exclusively for storing user interface preferences (e.g., dark mode setting, unit system) and query-limit counters for rate-limiting purposes under the Free Plan. This data is strictly functional and does not constitute profiling or behavioural tracking.</li>
-        <li><strong>In-Memory Cache:</strong> transient session data that is cleared upon Application closure and is never persisted to disk.</li>
-      </ul>
-      <p>No third-party advertising SDKs, cross-app tracking frameworks, or analytics SDKs that report Personal Data to external parties are embedded in the Application.</p>
-    </section>
+<section class="section" id="s8">
+<h2 class="sec-title"><span class="sec-num">8</span>Rights of Data Subjects</h2>
+<p>Pursuant to Chapter III GDPR, every User has the following rights with respect to their Personal Data:</p>
+<ul>
+<li><strong>Right of Access (Article 15 GDPR):</strong> the right to obtain confirmation as to whether Personal Data are being processed and, if so, to receive a copy thereof.</li>
+<li><strong>Right to Rectification (Article 16 GDPR):</strong> the right to obtain rectification of inaccurate Personal Data and completion of incomplete data.</li>
+<li><strong>Right to Erasure / "Right to be Forgotten" (Article 17 GDPR):</strong> the right to obtain erasure of Personal Data where one of the grounds specified in Article 17(1) GDPR applies.</li>
+<li><strong>Right to Restriction of Processing (Article 18 GDPR):</strong> the right to obtain restriction of processing in the circumstances set out in Article 18(1) GDPR.</li>
+<li><strong>Right to Data Portability (Article 20 GDPR):</strong> the right to receive Personal Data in a structured, commonly used, and machine-readable format and to transmit it to another controller, where processing is based on consent or contract.</li>
+<li><strong>Right to Object (Article 21 GDPR):</strong> the right to object, on grounds relating to the User's particular situation, to processing based on legitimate interests.</li>
+<li><strong>Right to Withdraw Consent (Article 7(3) GDPR):</strong> where processing is based on consent, the right to withdraw such consent at any time, without prejudice to the lawfulness of processing prior to withdrawal.</li>
+<li><strong>Right to Lodge a Complaint:</strong> the right to lodge a complaint with the President of the Office for Personal Data Protection (Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warsaw, Poland), or with the supervisory authority in the User's Member State of habitual residence.</li>
+</ul>
+<div class="note">To exercise any of the above rights, the User should submit a written request to the Controller's e-mail address stated in Section 3. The Controller shall respond within thirty (30) calendar days, or, in complex cases, within a maximum of ninety (90) calendar days, informing the User of any extension and the reasons therefor.</div>
+</section>
 
-    <section class="section" id="s10">
-      <h2 class="sec-title"><span class="sec-num">10</span>Protection of Minors</h2>
-      <p>The Application is intended exclusively for natural persons who have attained the age of sixteen (16) years. The Application does not knowingly collect Personal Data from individuals under the age of sixteen (16). If the Controller becomes aware that Personal Data of a minor under the age of sixteen (16) has been collected without verifiable parental or guardian consent, the Controller shall promptly take steps to delete such data.</p>
-      <p>Parents or legal guardians who believe that their minor child has provided Personal Data to the Application without consent are requested to contact the Controller at the address specified in Section 3.</p>
-    </section>
+<section class="section" id="s9">
+<h2 class="sec-title"><span class="sec-num">9</span>Local Storage and Device-Side Data</h2>
+<p>The Application does not use browser-based cookies. However, it employs the following device-side storage mechanisms:</p>
+<ul>
+<li><strong>SharedPreferences (Android) / NSUserDefaults (iOS):</strong> used exclusively for storing user interface preferences (e.g., dark mode setting, unit system) and query-limit counters for rate-limiting purposes under the Free Plan. This data is strictly functional and does not constitute profiling or behavioural tracking.</li>
+<li><strong>In-Memory Cache:</strong> transient session data that is cleared upon Application closure and is never persisted to disk.</li>
+</ul>
+<p>No third-party advertising SDKs, cross-app tracking frameworks, or analytics SDKs that report Personal Data to external parties are embedded in the Application.</p>
+</section>
 
-    <section class="section" id="s11">
-      <h2 class="sec-title"><span class="sec-num">11</span>Security Measures</h2>
-      <p>The Controller implements appropriate technical and organisational measures, in accordance with Article 32 GDPR, to ensure a level of security appropriate to the risk, including:</p>
-      <ul>
-        <li>End-to-end encryption (TLS 1.2 or higher) for all data in transit between the Application and Supabase backend servers;</li>
-        <li>Storage of User passwords exclusively in the form of irreversible cryptographic hashes using industry-standard hashing algorithms (e.g., bcrypt/Argon2), as managed by Supabase Authentication;</li>
-        <li>Role-based access controls and row-level security policies (RLS) on the Supabase database layer, ensuring that each User can access exclusively their own data;</li>
-        <li>Regular security assessments of the Application's infrastructure;</li>
-        <li>Contractual obligations imposed on all Processors to implement equivalent security standards.</li>
-      </ul>
-      <p>In the event of a Personal Data Breach that is likely to result in a high risk to the rights and freedoms of natural persons, the Controller shall notify the affected Users without undue delay, in accordance with Article 34 GDPR.</p>
-    </section>
+<section class="section" id="s10">
+<h2 class="sec-title"><span class="sec-num">10</span>Protection of Minors</h2>
+<p>The Application is intended exclusively for natural persons who have attained the age of sixteen (16) years. The Application does not knowingly collect Personal Data from individuals under the age of sixteen (16). If the Controller becomes aware that Personal Data of a minor under the age of sixteen (16) has been collected without verifiable parental or guardian consent, the Controller shall promptly take steps to delete such data.</p>
+<p>Parents or legal guardians who believe that their minor child has provided Personal Data to the Application without consent are requested to contact the Controller at the address specified in Section 3.</p>
+</section>
 
-    <section class="section" id="s12">
-      <h2 class="sec-title"><span class="sec-num">12</span>Changes to This Policy</h2>
-      <p>The Controller reserves the right to amend this Policy at any time, in particular to reflect changes in applicable law, decisions of supervisory authorities, or modifications to the Application's features. In the event of material amendments, the Controller shall notify Users by means of an in-application notice or electronic mail sent to the address associated with the User's Account, no less than fourteen (14) days prior to the entry into force of the amended Policy.</p>
-      <p>Continued use of the Application following the effective date of an amended Policy shall constitute the User's acceptance of the changes, to the extent permitted by applicable mandatory law. Where the amendment requires renewed consent, the User shall be explicitly invited to provide such consent.</p>
-    </section>
+<section class="section" id="s11">
+<h2 class="sec-title"><span class="sec-num">11</span>Security Measures</h2>
+<p>The Controller implements appropriate technical and organisational measures, in accordance with Article 32 GDPR, to ensure a level of security appropriate to the risk, including:</p>
+<ul>
+<li>Encryption (TLS 1.2 or higher) for all data in transit between the Application, the Supabase backend servers, and the AI Providers;</li>
+<li>Storage of User passwords exclusively in the form of irreversible cryptographic hashes using industry-standard hashing algorithms (e.g., bcrypt/Argon2), as managed by Supabase Authentication;</li>
+<li>Role-based access controls and row-level security policies (RLS) on the Supabase database layer, ensuring that each User can access exclusively their own data;</li>
+<li>Data minimisation in communication with AI Providers: requests are routed through the Controller's server-side Edge Functions, API keys are never stored in the Application, and Account identifiers are not forwarded to AI Providers;</li>
+<li>Regular security assessments of the Application's infrastructure;</li>
+<li>Contractual obligations imposed on Processors to implement equivalent security standards, to the extent permitted by the provider's standard terms.</li>
+</ul>
+<p>In the event of a Personal Data Breach that is likely to result in a high risk to the rights and freedoms of natural persons, the Controller shall notify the affected Users without undue delay, in accordance with Article 34 GDPR.</p>
+</section>
 
-    <section class="section" id="s13">
-      <h2 class="sec-title"><span class="sec-num">13</span>Governing Law</h2>
-      <p>This Policy is governed by the law of the Republic of Poland. In matters not regulated by this Policy, the provisions of the GDPR, the DSA, and applicable Polish civil law shall apply. Any disputes arising from or in connection with this Policy shall be subject to the jurisdiction of the competent Polish courts, without prejudice to the User's right to bring proceedings before the supervisory authority as set out in Section 8.</p>
-    </section>
+<section class="section" id="s12">
+<h2 class="sec-title"><span class="sec-num">12</span>Changes to This Policy</h2>
+<p>The Controller reserves the right to amend this Policy at any time, in particular to reflect changes in applicable law, decisions of supervisory authorities, changes of AI Providers, or modifications to the Application's features. In the event of material amendments, the Controller shall notify Users by means of an in-application notice or electronic mail sent to the address associated with the User's Account, no less than fourteen (14) days prior to the entry into force of the amended Policy.</p>
+<p>Continued use of the Application following the effective date of an amended Policy shall constitute the User's acceptance of the changes, to the extent permitted by applicable mandatory law. Where the amendment requires renewed consent (including consent under Section 5.4), the User shall be explicitly invited to provide such consent.</p>
+</section>
 
-  </main>
+<section class="section" id="s13">
+<h2 class="sec-title"><span class="sec-num">13</span>Governing Law</h2>
+<p>This Policy is governed by the law of the Republic of Poland. In matters not regulated by this Policy, the provisions of the GDPR, the DSA, and applicable Polish civil law shall apply. Any disputes arising from or in connection with this Policy shall be subject to the jurisdiction of the competent Polish courts, without prejudice to the User's right to bring proceedings before the supervisory authority as set out in Section 8.</p>
+</section>
 
-  <footer class="doc-footer">
-    <span>SpringBoard Privacy Policy</span>
-    <span>Effective: 6 September 2026</span>
-    <span>Controller: <a href="mailto:kmdevworks.contact@gmail.com">kmdevworks.contact@gmail.com</a></span>
-  </footer>
+</main>
+
+<footer class="doc-footer">
+<span>SpringBoard Privacy Policy</span>
+<span>Effective: 18 October 2026</span>
+<span>Controller: <a href="mailto:kmdevworks.contact@gmail.com">kmdevworks.contact@gmail.com</a></span>
+</footer>
 
 </div>
 </body>
