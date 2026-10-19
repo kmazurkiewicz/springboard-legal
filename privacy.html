@@ -47,7 +47,7 @@ li strong{font-weight:600}
 <div class="doc-header-logo"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2zm0 4l6 3.3V12c0 3.77-2.58 7.3-6 8.58C8.58 19.3 6 15.77 6 12V9.3L12 6z"/></svg></div>
 <div class="doc-header-text">
 <h1>Privacy Policy</h1>
-<p class="subtitle"><strong>SpringBoard</strong> &nbsp;·&nbsp; Effective Date: <strong>18 October 2026</strong> &nbsp;·&nbsp; Last updated: <strong>18 October 2026</strong></p>
+<p class="subtitle"><strong>SpringBoard</strong> &nbsp;·&nbsp; Effective Date: <strong>18 October 2026</strong> &nbsp;·&nbsp; Last updated: <strong>19 October 2026</strong></p>
 </div>
 </header>
 
@@ -79,7 +79,7 @@ li strong{font-weight:600}
 <li>Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data ("GDPR");</li>
 <li>Regulation (EU) 2022/2065 of the European Parliament and of the Council of 19 October 2022 on a Single Market For Digital Services ("Digital Services Act" / "DSA");</li>
 <li>Applicable provisions of Polish civil law; and</li>
-<li>Platform policies of Google Play Console and Apple App Store.</li>
+<li>Platform policies of Google Play Console (including the Health Connect policies) and Apple App Store.</li>
 </ul>
 <p>This Policy applies to all natural persons who install, access, or otherwise use the Application, irrespective of their jurisdiction of residence, to the extent permitted by applicable mandatory law.</p>
 </section>
@@ -93,10 +93,12 @@ li strong{font-weight:600}
 <li><strong>"User"</strong> means any natural person who creates an Account or otherwise uses the Application, acting in their personal capacity.</li>
 <li><strong>"Account"</strong> means the individual access profile created by the User upon registration, enabling access to the personalised features of the Application.</li>
 <li><strong>"Personal Data"</strong> means any information relating to an identified or identifiable natural person, as defined in Article 4(1) GDPR.</li>
+<li><strong>"Step Data"</strong> means the User's daily step totals and related technical values (such as the cumulative reading of the device's step counter sensor, used as a reference point to calculate daily totals), together with the daily step goal and the walking distance estimated from the step count and the User's height, whether obtained from the step counter sensor of the User's device or, where the User has permitted it, from Health Connect.</li>
+<li><strong>"Health Connect"</strong> means the Android system component operated by Google that allows apps, with the User's permission, to read and share health and fitness data stored on the device.</li>
 <li><strong>"AI Services"</strong> means the artificial-intelligence-powered analytical and informational features of the Application, including but not limited to training load analysis, fatigue estimation, workout plan generation, and the AI trainer chat. The AI Services are powered by large language models provided by the following AI Providers: (i) Google LLC (Google Cloud / Google AI Studio, Gemini API) and (ii) Hangzhou DeepSeek Artificial Intelligence Co., Ltd. ("DeepSeek", DeepSeek V4 model, via the api.deepseek.com interface).</li>
 <li><strong>"AI Providers"</strong> means the third-party providers of language models used to deliver the AI Services, as listed in Section 6.</li>
 <li><strong>"User Content"</strong> means all data, texts, parameters, and configurations inputted into the Application by the User, including anthropometric parameters, training logs, plan structures, and chat conversations.</li>
-<li><strong>"Processor"</strong> means a natural or legal person, public authority, agency, or other body which processes Personal Data on behalf of the Controller, including Supabase Inc. and the AI Providers in their respective capacities.</li>
+<li><strong>"Processor"</strong> means a natural or legal person, public authority, agency, or other body which processes Personal Data on behalf of the Controller, including Supabase Inc., the AI Providers, PostHog, Sentry, and RevenueCat in their respective capacities.</li>
 <li><strong>"Sub-processor"</strong> means a third party engaged by a Processor to perform specific processing activities on behalf of the Controller.</li>
 <li><strong>"Services"</strong> means all functionalities made available through the Application, including the Free Plan and the Premium Plan subscription tier.</li>
 <li><strong>"Third Country"</strong> means any country outside the European Economic Area (EEA) that has not been the subject of an adequacy decision by the European Commission pursuant to Article 45 GDPR.</li>
@@ -116,6 +118,8 @@ li strong{font-weight:600}
 <ul>
 <li>Electronic mail address (e-mail), used as the primary Account identifier;</li>
 <li>Cryptographic hash of the User's password (stored exclusively in hashed form; the Controller does not retain plaintext passwords);</li>
+<li>Where the User signs in with Google: the e-mail address and basic profile information that Google makes available to the Application through the sign-in flow (for example, name, where provided), and the Google account identifier;</li>
+<li>A randomly generated Account identifier, which is also used to link the Account across the services described in Section 6;</li>
 <li>Account creation timestamp and last-authentication metadata.</li>
 </ul>
 
@@ -127,7 +131,18 @@ li strong{font-weight:600}
 <li>Dynamic indicators of central nervous system (CNS) fatigue and per-muscle-group recovery status, as calculated by the Application's algorithms on the basis of User-inputted training data.</li>
 </ul>
 
-<h3 class="sub-title">4.3 AI Services Interaction Data</h3>
+<h3 class="sub-title">4.3 Step and Activity Data</h3>
+<ul>
+<li>Daily step totals calculated from the step counter sensor of the User's device. This requires the "Physical activity" (Activity Recognition) permission, which the Application requests separately and which the User may refuse or revoke at any time in the device settings;</li>
+<li>Where the User additionally grants access, step totals read from Health Connect (read-only access to the "Steps" data type). The Application does not write any data to Health Connect;</li>
+<li>Technical reference values of the step counter sensor (for example, the last reading and the day on which it was taken), stored so that daily totals are calculated correctly and steps taken while the Application is closed are not lost;</li>
+<li>The daily step goal set by the User, and the walking distance estimated from the step count and the User's height (calculated on the device).</li>
+</ul>
+<p>To keep daily totals accurate, the Application periodically reads the step counter in the background (approximately every fifteen minutes), including when the Application is closed. This does not involve location tracking, and the Application does not use Step Data to determine the User's location.</p>
+<div class="note"><strong>Where Step Data is stored.</strong> As at the date of this Policy, Step Data is stored exclusively on the User's device (see Section 6.4). It is not transmitted to the Controller's servers, to Supabase, to the AI Providers, or to any other third party, and it is not included in the data used by the AI Services. If this changes, the Controller will first update this Policy, notify Users in accordance with Section 12, and, where required by law, ask for the User's consent.</div>
+<p><strong>Health Connect.</strong> Data obtained through Health Connect is used solely to provide and improve the user-facing step tracking features of the Application. It is not used or transferred for advertising purposes, is not sold, and is not used to determine credit-worthiness or for insurance purposes. It is not transferred to third parties except where necessary to comply with applicable law, and it is not read by humans unless the User has given consent, it is necessary for security purposes, or it is required by law.</p>
+
+<h3 class="sub-title">4.4 AI Services Interaction Data</h3>
 <ul>
 <li>Textual content of conversational queries submitted to the AI Services (chat metadata);</li>
 <li>AI-generated responses stored for continuity of the User session;</li>
@@ -135,15 +150,18 @@ li strong{font-weight:600}
 </ul>
 <div class="warn">Please do not enter into the AI chat any information that is not necessary to obtain training advice, in particular data concerning your health, medical conditions, or other sensitive matters, nor data of other persons. Content you type into the chat is transmitted to the AI Providers as described in Section 6.</div>
 
-<h3 class="sub-title">4.4 Technical and Device Data</h3>
+<h3 class="sub-title">4.5 Technical and Device Data</h3>
 <ul>
 <li>Anonymised or pseudonymised application session logs stored on Supabase infrastructure;</li>
+<li>Crash reports, error diagnostics, and performance traces generated by the Application (for example, stack traces, device model, operating system version, Application version, and the Account identifier), collected through Sentry;</li>
+<li>Product analytics events (screens viewed and Application lifecycle events such as installation, opening, and updating), associated with the Account identifier, collected through PostHog;</li>
+<li>Subscription and purchase status (for example, the active plan, purchase and renewal dates, and store transaction identifiers), linked to the Account identifier and managed through RevenueCat;</li>
 <li>User interface cache data and query-limit identifiers stored in SharedPreferences / Local Storage on the User's device (persisted locally; not transmitted to the Controller's servers);</li>
 <li>Application version, operating system type and version, and device locale settings.</li>
 </ul>
 
-<h3 class="sub-title">4.5 Data Not Collected</h3>
-<p>The Controller expressly does not collect: precise geolocation data; payment card or banking details (subscription payments are processed exclusively by Google Play Billing or Apple In-App Purchase, as applicable, and the Controller receives only a non-sensitive transaction confirmation); biometric identifiers within the meaning of Article 9 GDPR; or any data relating to minors under the age of sixteen (16).</p>
+<h3 class="sub-title">4.6 Data Not Collected</h3>
+<p>The Controller expressly does not collect: precise geolocation data (including for the purposes of step counting); payment card or banking details (subscription payments are processed exclusively by Google Play Billing or Apple In-App Purchase, and the Controller receives only a non-sensitive transaction confirmation and the resulting subscription status, including through RevenueCat); biometric identifiers within the meaning of Article 9 GDPR; or any data relating to minors under the age of sixteen (16).</p>
 </section>
 
 <section class="section" id="s5">
@@ -154,15 +172,17 @@ li strong{font-weight:600}
 <ul>
 <li>Creation, maintenance, and authentication of the User's Account;</li>
 <li>Provision of the core features of the Application, including workout tracking and AI Services, including the transmission of User Content to the AI Providers for the purpose of generating responses;</li>
-<li>Administration of the Free Plan and Premium Plan subscription, including enforcement of daily AI interaction limits.</li>
+<li>Calculation, storage, and display on the User's device of step counts, the daily step goal, and estimated distance (subject to the consent described in Section 5.4 where Step Data is regarded as data concerning health);</li>
+<li>Administration of the Free Plan and Premium Plan subscription, including verification of subscription status (through RevenueCat) and enforcement of daily AI interaction limits.</li>
 </ul>
 
 <h3 class="sub-title">5.2 Legitimate Interests of the Controller (Article 6(1)(f) GDPR)</h3>
 <ul>
 <li>Detection, investigation, and prevention of fraudulent activity, abuse, and violations of the Terms of Service;</li>
-<li>Ensuring the technical security and operational integrity of the Application and its infrastructure;</li>
-<li>Aggregated, anonymised statistical analysis for the purpose of improving Application features, provided such analysis does not permit re-identification of individual Users.</li>
+<li>Ensuring the technical security and operational integrity of the Application and its infrastructure, including the detection and diagnosis of crashes and errors (through Sentry);</li>
+<li>Statistical analysis and product analytics (through PostHog) for the purpose of understanding how the Application is used and improving its features. Analytics events are linked to a pseudonymous Account identifier and are therefore pseudonymised, not anonymous, data.</li>
 </ul>
+<p>The User may object to processing based on legitimate interests as described in Section 8.</p>
 
 <h3 class="sub-title">5.3 Compliance with Legal Obligations (Article 6(1)(c) GDPR)</h3>
 <ul>
@@ -170,9 +190,10 @@ li strong{font-weight:600}
 <li>Response to lawful requests of competent public authorities.</li>
 </ul>
 
-<h3 class="sub-title">5.4 Consent (Article 6(1)(a) and Article 49(1)(a) GDPR)</h3>
+<h3 class="sub-title">5.4 Consent (Article 6(1)(a), Article 9(2)(a) and Article 49(1)(a) GDPR)</h3>
 <p>Where the Controller sends optional electronic communications (e.g., product newsletters), solely on the basis of the User's freely given, specific, informed, and unambiguous consent, which may be withdrawn at any time without detriment.</p>
 <p>Where User Content is transmitted to an AI Provider located in a Third Country in respect of which no adequacy decision exists (see Section 6.3), such transmission takes place on the basis of the User's explicit consent, given by an active, separate action in the Application before first use of any AI feature, after being informed of the risks described in Section 6.3. The User may withdraw this consent at any time in the Application settings or by contacting the Controller, without prejudice to the lawfulness of processing carried out before withdrawal.</p>
+<p>To the extent that Step Data is regarded as data concerning health within the meaning of Article 9 GDPR, it is processed on the basis of the User's explicit consent, given by granting the relevant system permission (Activity Recognition and/or Health Connect) after the Application has explained why the permission is needed. The User may withdraw this consent at any time by revoking the permission in the device settings or in Health Connect. Withdrawal stops further collection and does not affect the lawfulness of processing carried out before withdrawal. Without this permission, step counting is not available, while the other features of the Application remain usable.</p>
 </section>
 
 <section class="section" id="s6">
@@ -189,16 +210,25 @@ li strong{font-weight:600}
 </ul>
 
 <h3 class="sub-title">6.3 DeepSeek (Hangzhou DeepSeek Artificial Intelligence Co., Ltd.)</h3>
-<p>The primary language model used for all AI Services is DeepSeek V4, provided via the official DeepSeek API (api.deepseek.com) by Hangzhou DeepSeek Artificial Intelligence Co., Ltd., a company established in the People's Republic of China. Each AI request is sent to DeepSeek first. Only if the DeepSeek service returns an error or is unavailable is the request automatically redirected to Google Gemini (Section 6.2). User Content is transmitted through the Controller's serverless Edge Functions and consists of: the text of the User's query, the User's training history, and the calculated fatigue level necessary to generate a response. The Controller does not transmit the User's e-mail address, name, or Account identifier to DeepSeek.</p>
+<p>The primary language model used for all AI Services is DeepSeek V4, provided via the official DeepSeek API (api.deepseek.com) by Hangzhou DeepSeek Artificial Intelligence Co., Ltd., a company established in the People's Republic of China. Each AI request is sent to DeepSeek first. Only if the DeepSeek service returns an error or is unavailable is the request automatically redirected to Google Gemini (Section 6.2). User Content is transmitted through the Controller's serverless Edge Functions and consists of: the text of the User's query, the User's training history, and the calculated fatigue level necessary to generate a response. The Controller does not transmit the User's e-mail address, name, or Account identifier to DeepSeek. As at the date of this Policy, Step Data is not included in the data transmitted to the AI Providers.</p>
 <p><strong>Transfer to a Third Country.</strong> According to DeepSeek's published privacy policy, data is processed and stored on servers located in the People's Republic of China, for which the European Commission has not issued an adequacy decision. The Controller has no standard contractual clauses or other Article 46 GDPR safeguard in place with DeepSeek. The laws of the People's Republic of China may allow public authorities to access data held by DeepSeek, and the level of protection may be lower than in the EEA, and enforcing your rights against DeepSeek may be difficult or impossible. For these reasons, User Content is transmitted to DeepSeek only on the basis of the User's explicit consent pursuant to Article 49(1)(a) GDPR, as described in Section 5.4. A User who does not give consent can still use the Application, but the AI Services will not be available.</p>
 <p><strong>Use of data by DeepSeek.</strong> DeepSeek acts under its own terms and privacy policy, on which the Controller has no influence. DeepSeek does not publish a fixed retention period for data sent through its API, and its terms and privacy policy may allow it to use submitted content to develop and improve its models. The Controller cannot guarantee that User Content will not be used for those purposes, nor can the Controller guarantee its deletion. In contrast to Google (Section 6.2), no such warranty is given in relation to DeepSeek. Users are therefore advised not to include in the AI chat any information they do not wish to be processed in this way.</p>
 <div class="note">AI-generated content is informational only. It does not constitute medical advice and does not replace consultation with a physician or qualified trainer. The Controller does not make decisions producing legal or similarly significant effects on Users solely by automated means within the meaning of Article 22 GDPR.</div>
 
 <h3 class="sub-title">6.4 Local Device Storage</h3>
-<p>Certain non-personal or pseudonymised data — specifically, user interface preference settings, interface cache, and session-independent query-limit counters — are stored exclusively in SharedPreferences (Android) or equivalent Local Storage mechanisms (iOS) on the User's physical device. Such data does not leave the device and is not transmitted to the Controller or any Processor.</p>
+<p>Certain data is stored exclusively in SharedPreferences (Android) or equivalent Local Storage mechanisms (iOS) on the User's physical device — specifically, user interface preference settings, interface cache, session-independent query-limit counters, and Step Data (daily step totals, sensor reference values, and the daily step goal). Step Data is Personal Data. The Application does not transmit this data to the Controller or to any Processor. Depending on the User's device settings, the device's operating system may include Application data in device backups made to the User's own account with the operating system provider, which is outside the Controller's control.</p>
 
-<h3 class="sub-title">6.5 Platform Providers</h3>
-<p>Distribution of the Application via Google Play Store (Google LLC) and Apple App Store (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA) may result in those platform providers processing certain technical metadata in accordance with their own, independent privacy policies. The Controller bears no responsibility for the data processing practices of platform providers acting as independent controllers.</p>
+<h3 class="sub-title">6.5 PostHog (Product Analytics)</h3>
+<p>The Application uses PostHog (PostHog, Inc.) for product analytics. Events are sent to PostHog's European cloud infrastructure and consist of the Account identifier, names of screens viewed, Application lifecycle events, and basic device information. The Controller does not send the content of training logs, AI chat messages, Step Data, or the User's e-mail address to PostHog. Because PostHog, Inc. is established in the United States, access to data from outside the EEA cannot be excluded; any such transfer is governed by the data processing agreement of PostHog, which incorporates the Standard Contractual Clauses.</p>
+
+<h3 class="sub-title">6.6 Sentry (Crash Reporting and Performance Monitoring)</h3>
+<p>The Application uses Sentry (Functional Software, Inc., trading as Sentry) to detect and diagnose crashes, errors, and performance problems. Reports are sent to Sentry's European (Germany) data region and contain technical information about the error, the device model, the operating system and Application versions, and the Account identifier. Because Sentry is established in the United States, access to data from outside the EEA cannot be excluded; any such transfer is governed by the data processing agreement of Sentry, which incorporates the Standard Contractual Clauses.</p>
+
+<h3 class="sub-title">6.7 RevenueCat (Subscription Management)</h3>
+<p>To manage and validate subscriptions purchased through Google Play or the Apple App Store, the Application uses RevenueCat, Inc. (United States). RevenueCat receives the Account identifier, purchase information from the relevant store, and the resulting subscription status, and may process technical identifiers (such as the IP address) necessary to provide its service. Any transfer to the United States is governed by the data processing agreement of RevenueCat, which incorporates the Standard Contractual Clauses.</p>
+
+<h3 class="sub-title">6.8 Platform and Sign-In Providers</h3>
+<p>Distribution of the Application via Google Play Store (Google LLC) and Apple App Store (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA) may result in those platform providers processing certain technical metadata in accordance with their own, independent privacy policies. Where the User signs in with Google, Google LLC authenticates the User as an independent controller under its own privacy policy and shares with the Application the data described in Section 4.1. The Controller bears no responsibility for the data processing practices of platform providers and sign-in providers acting as independent controllers.</p>
 </section>
 
 <section class="section" id="s7">
@@ -209,8 +239,10 @@ li strong{font-weight:600}
 <li><strong>Training and Anthropometric Data:</strong> for the duration of the active Account; deleted within ninety (90) days of Account deletion upon User request;</li>
 <li><strong>AI Services Interaction Data (chat metadata):</strong> retained on Supabase servers for a rolling period of twelve (12) months from the date of each interaction, then permanently deleted;</li>
 <li><strong>Data held by AI Providers:</strong> retained by each AI Provider in accordance with its own terms. Google determines retention under the applicable Google Cloud terms. DeepSeek does not publish a fixed retention period, and the Controller has no influence over how long data is retained by DeepSeek;</li>
+<li><strong>Step Data:</strong> stored on the User's device only, until the User uninstalls the Application or clears the Application's data. Revoking the Activity Recognition or Health Connect permission stops further collection but does not delete totals already stored on the device. The Controller has no access to Step Data and does not retain it;</li>
+<li><strong>Analytics, crash, and subscription data (PostHog, Sentry, RevenueCat):</strong> retained only for as long as necessary for the purposes described in Section 5, in line with the retention settings applied by the Controller in each service and the provider's terms. Upon deletion of an Account, the Controller will take steps to have the Account-linked data in these services deleted or anonymised, except where retention is required by law (for example, records of purchases);</li>
 <li><strong>Application Log Data:</strong> retained for a period of ninety (90) days for security and debugging purposes, then automatically purged;</li>
-<li><strong>Data on Local Device Storage:</strong> persisted until the User uninstalls the Application or manually clears Application data through device settings.</li>
+<li><strong>Other data on Local Device Storage:</strong> persisted until the User uninstalls the Application or manually clears Application data through device settings.</li>
 </ul>
 <p>Upon expiry of the applicable retention period, Personal Data shall be permanently deleted or irreversibly anonymised in a manner that prevents re-identification.</p>
 </section>
@@ -235,10 +267,10 @@ li strong{font-weight:600}
 <h2 class="sec-title"><span class="sec-num">9</span>Local Storage and Device-Side Data</h2>
 <p>The Application does not use browser-based cookies. However, it employs the following device-side storage mechanisms:</p>
 <ul>
-<li><strong>SharedPreferences (Android) / NSUserDefaults (iOS):</strong> used exclusively for storing user interface preferences (e.g., dark mode setting, unit system) and query-limit counters for rate-limiting purposes under the Free Plan. This data is strictly functional and does not constitute profiling or behavioural tracking.</li>
+<li><strong>SharedPreferences (Android) / NSUserDefaults (iOS):</strong> used for storing user interface preferences (e.g., dark mode setting, unit system), query-limit counters for rate-limiting purposes under the Free Plan, and Step Data together with the daily step goal. The step-related entries are Personal Data processed as described in Section 4.3; the remaining entries are strictly functional and do not constitute profiling or behavioural tracking.</li>
 <li><strong>In-Memory Cache:</strong> transient session data that is cleared upon Application closure and is never persisted to disk.</li>
 </ul>
-<p>No third-party advertising SDKs, cross-app tracking frameworks, or analytics SDKs that report Personal Data to external parties are embedded in the Application.</p>
+<p>No third-party advertising SDKs or cross-app tracking frameworks are embedded in the Application. The Application does embed the SDKs of PostHog (product analytics), Sentry (crash reporting and performance monitoring), and RevenueCat (subscription management), which process the data described in Sections 4.5 and 6.</p>
 </section>
 
 <section class="section" id="s10">
