@@ -256,12 +256,12 @@
   <header class="doc-header">
     <div class="doc-header-logo">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zM5 20h14v2H5v-2zM20 7h-3.5V5l-2-2h-5l-2 2v2H4c-1.1 0-2 .9-2 2v1c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-5 0h-6V5.17L10.17 4h3.66L15 5.17V7z"/>
+        <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zM5 20h14v2H5v-2zM20 7h-3.5V5l-2-2h-5l-2 2v2H4c-1.1 0-2 .9-2 2v1c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-5 0h-6V5.170L10.17 4h3.66L15 5.17V7z"/>
       </svg>
     </div>
     <div class="doc-header-text">
       <h1>Terms of Service</h1>
-      <p class="subtitle"><strong>SpringBoard</strong> &nbsp;·&nbsp; Effective Date: <strong>6 September 2026</strong> &nbsp;·&nbsp; Last updated: 6 September 2026</p>
+      <p class="subtitle"><strong>SpringBoard</strong> &nbsp;·&nbsp; Effective Date: <strong>4 November 2026</strong> &nbsp;·&nbsp; Last updated: 4 November 2026</p>
     </div>
   </header>
 
@@ -321,7 +321,8 @@
         <li><strong>"Application"</strong> means the SpringBoard mobile software application, in all its versions and updates, distributed via Google Play Store and Apple App Store.</li>
         <li><strong>"Account"</strong> means the personalised user profile created upon successful registration, affording access to the full range of the Application's features.</li>
         <li><strong>"Services"</strong> means the totality of features and functionalities made available through the Application, including AI Services, workout tracking, plan management, and subscription-based premium features.</li>
-        <li><strong>"AI Services"</strong> means the artificial-intelligence-powered analytical and informational features of the Application, operated via the Google Cloud / Google AI Studio Gemini API through serverless Edge Functions, providing training load analysis, CNS and muscle-group fatigue estimation, and workout plan generation.</li>
+        <li><strong>"AI Services"</strong> means the artificial-intelligence-powered analytical and informational features of the Application, operated through serverless Edge Functions using large language models provided by the AI Providers, providing training load analysis, CNS and muscle-group fatigue estimation, and workout plan generation.</li>
+        <li><strong>"AI Providers"</strong> means the third-party providers of the large language models used to operate the AI Services, namely: (i) Hangzhou DeepSeek Artificial Intelligence Co., Ltd. ("DeepSeek"), as the primary provider; and (ii) Google LLC (Google Cloud / Google AI Studio, Gemini API), as a fallback provider used when DeepSeek is unavailable or returns an error, as further described in the Privacy Policy.</li>
         <li><strong>"User Content"</strong> means all data, parameters, text, plans, and other materials inputted into the Application by the User, including anthropometric parameters, exercise logs, workout plan configurations, and chat messages.</li>
         <li><strong>"Free Plan"</strong> means the complimentary tier of the Services, subject to a daily volumetric limit on AI Services interactions, as specified in Section 7.</li>
         <li><strong>"Premium Plan"</strong> means the paid subscription tier of the Services, providing enhanced or unlimited access to AI Services and any additional premium features, as described in the Application.</li>
@@ -341,7 +342,7 @@
     <section class="section" id="s4">
       <h2 class="sec-title"><span class="sec-num">4</span>Conclusion and Duration of the Agreement</h2>
       <p>The Agreement for the provision of electronic services is concluded between the Service Provider and the User at the moment the User completes the Account registration process by submitting the registration form and confirming their e-mail address, or, in the absence of a registration requirement, upon the User's first use of any feature of the Application.</p>
-      <p>The Agreement is concluded for an indefinite period. Either party may terminate the Agreement in accordance with the provisions of Section 14. The Agreement for a Premium Plan subscription is concluded for the duration of the billing cycle selected by the User (monthly or annual) and is subject to automatic renewal unless cancelled in accordance with Section 7.3.</p>
+      <p>The Agreement is concluded for an indefinite period. Either party may terminate the Agreement in accordance with the provisions of Section 14. The Agreement for a Premium Plan subscription is concluded for the duration of the billing cycle selected by the User (weekly, monthly, or annual, as offered in the Application) and is subject to automatic renewal unless cancelled in accordance with Section 7.3.</p>
     </section>
 
     <section class="section" id="s5">
@@ -373,13 +374,16 @@
       <h2 class="sec-title"><span class="sec-num">7</span>Subscription Plans, Billing, and Refunds</h2>
 
       <h3 class="sub-title">7.1 Free Plan</h3>
-      <p>The Free Plan provides access to the core features of the Application, including workout tracking and a limited daily volume of AI Services interactions. The daily limit applicable to the Free Plan is specified within the Application and is subject to adjustment by the Service Provider upon at least fourteen (14) days' prior notice. The daily interaction limit is enforced by means of session-independent counters stored locally on the User's device (SharedPreferences / Local Storage), without transmitting personal data to the Service Provider's servers for this specific purpose.</p>
+      <p>The Free Plan provides access to the core features of the Application, including workout tracking and a limited daily volume of AI Services interactions. The daily limit applicable to the Free Plan is specified within the Application and is subject to adjustment by the Service Provider upon at least fourteen (14) days' prior notice. The daily interaction limit is enforced by means of usage counters associated with the User's Account and stored on the Service Provider's backend (Supabase), which record only the number and time window of AI Services requests; a copy of the counter may also be cached on the User's device for display purposes.</p>
 
       <h3 class="sub-title">7.2 Premium Plan</h3>
-      <p>The Premium Plan is available on a subscription basis and provides access to enhanced or unlimited AI Services interactions and any additional premium features as described in the Application at the time of subscription. Subscription fees, billing frequency (monthly or annual), and any applicable promotional pricing are displayed in the Application prior to purchase and may be updated by the Service Provider with thirty (30) days' prior notice.</p>
+      <p>The Premium Plan is available on a subscription basis and provides access to enhanced or unlimited AI Services interactions and any additional premium features as described in the Application at the time of subscription. Subscription fees, billing frequency (weekly, monthly, or annual, as offered in the Application), free trial periods, and any applicable promotional pricing are displayed in the Application prior to purchase and may be updated by the Service Provider with thirty (30) days' prior notice.</p>
+
+      <h3 class="sub-title">7.2a Free Trial</h3>
+      <p>Where a free trial is offered for a Premium Plan, its duration is displayed in the Application and on the platform's purchase screen before the User confirms the purchase. Unless the User cancels the subscription at least twenty-four (24) hours before the end of the free trial through the relevant platform's subscription management interface, the subscription automatically converts into a paid Premium Plan and the User is charged the subscription fee for the selected billing cycle. Each User is eligible for a free trial no more than once, subject to the eligibility rules of the relevant platform.</p>
 
       <h3 class="sub-title">7.3 Billing and Renewal</h3>
-      <p>Premium Plan subscriptions are processed exclusively through the Google Play Billing system (for Android Users) or Apple In-App Purchase (for iOS Users), as applicable. The Service Provider does not collect or store payment card or banking details. Subscriptions auto-renew at the end of each billing cycle unless the User cancels at least twenty-four (24) hours before the end of the current billing period through the relevant platform's subscription management interface.</p>
+      <p>Premium Plan subscriptions are processed exclusively through the Google Play Billing system (for Android Users) or Apple In-App Purchase (for iOS Users), as applicable. Subscription status is verified with the assistance of RevenueCat, Inc. The Service Provider does not collect or store payment card or banking details. Subscriptions auto-renew at the end of each billing cycle unless the User cancels at least twenty-four (24) hours before the end of the current billing period through the relevant platform's subscription management interface.</p>
 
       <h3 class="sub-title">7.4 Refund Policy</h3>
       <p>All subscription purchases are processed and managed by Google Play Store or Apple App Store, as applicable, and are subject to the respective platform's refund policies. The Service Provider does not process refunds directly for in-app purchase transactions. Users seeking refunds should contact Google Play or Apple Support directly.</p>
@@ -390,7 +394,7 @@
       <h2 class="sec-title"><span class="sec-num">8</span>AI Services — Scope, Limitations, and Intellectual Property</h2>
 
       <h3 class="sub-title">8.1 Nature and Scope of AI Services</h3>
-      <p>The AI Services are powered by the Google Cloud Gemini API and operate by processing User Content (including training logs, anthropometric parameters, CNS fatigue indicators, and conversational queries) through serverless Edge Functions. The AI Services generate analytical output and informational suggestions ("AI-Generated Content") intended to assist the User in planning and monitoring their physical training activities.</p>
+      <p>The AI Services are powered by large language models provided by the AI Providers: DeepSeek is used as the primary provider, and Google Gemini is used automatically as a fallback where DeepSeek is unavailable or returns an error. The AI Services operate by processing User Content (including training logs, anthropometric parameters, CNS fatigue indicators, and conversational queries) through serverless Edge Functions. The AI Services generate analytical output and informational suggestions ("AI-Generated Content") intended to assist the User in planning and monitoring their physical training activities. User Content is transmitted to the AI Providers only after the User has given the consent requested in the Application before first use of the AI Services. Details of the data transmitted, the location of processing (including the transfer of data to DeepSeek in the People's Republic of China), and the User's right to withdraw consent are set out in the Privacy Policy.</p>
 
       <h3 class="sub-title">8.2 Critical Limitations — Non-Medical Nature</h3>
       <div class="caps-disclaimer">
@@ -398,8 +402,9 @@
         The AI Services and any AI-Generated Content are provided exclusively for informational and analytical purposes. They do not constitute: (i) medical advice or diagnosis within the meaning of applicable medical law; (ii) physiotherapy or rehabilitation services; (iii) professional sports coaching or certified personal training; (iv) any other regulated professional service. The algorithms generating training load and fatigue indicators are based on statistical modelling and do not account for the User's individual health status, pre-existing conditions, injuries, or medical contraindications. The User assumes sole and full responsibility for evaluating the suitability of any AI-Generated Content for their individual circumstances and for consulting qualified medical and sports professionals as appropriate.
       </div>
 
-      <h3 class="sub-title">8.3 No LLM Training on User Data</h3>
-      <p>The Service Provider expressly warrants that User Content transmitted to the Google AI Studio Gemini API for the purpose of operating the AI Services is not used by Google LLC for the training of publicly available large language models, pursuant to the applicable Data Processing Addendum between the Service Provider and Google LLC. This warranty is subject to Google LLC's compliance with its own contractual commitments.</p>
+      <h3 class="sub-title">8.3 Use of User Data by AI Providers</h3>
+      <p>In relation to Google LLC, the Service Provider warrants that User Content transmitted to the Gemini API for the purpose of operating the AI Services is not used by Google LLC for the training of publicly available large language models, pursuant to the applicable Data Processing Addendum between the Service Provider and Google LLC. This warranty is subject to Google LLC's compliance with its own contractual commitments.</p>
+      <p>No such warranty is given in relation to DeepSeek. DeepSeek processes User Content under its own terms and privacy policy, which may permit it to use submitted content to develop and improve its models and over which the Service Provider has no influence. The Service Provider does not transmit the User's e-mail address, name, or Account identifier to DeepSeek. Users who do not wish their User Content to be processed by DeepSeek should not use the AI Services, and may withdraw their consent at any time as described in the Privacy Policy.</p>
 
       <h3 class="sub-title">8.4 Intellectual Property in AI-Generated Content</h3>
       <p>AI-Generated Content produced by the AI Services in response to the User's queries is generated autonomously by an artificial intelligence system. To the extent that AI-Generated Content may attract copyright protection under applicable law, the Service Provider grants the User a non-exclusive, worldwide, royalty-free, perpetual licence to use, reproduce, and adapt such AI-Generated Content for the User's personal, non-commercial purposes. The User acknowledges that:</p>
@@ -445,7 +450,7 @@
       </ul>
 
       <h3 class="sub-title">10.3 User Content Licence</h3>
-      <p>The User retains all intellectual property rights in their User Content. By submitting User Content to the Application, the User grants the Service Provider a limited, non-exclusive, worldwide, royalty-free licence to process, store, and transmit User Content solely to the extent necessary to provide the Services, including transmitting relevant User Content to the Gemini API for the purpose of generating AI Services responses, in accordance with the Privacy Policy.</p>
+      <p>The User retains all intellectual property rights in their User Content. By submitting User Content to the Application, the User grants the Service Provider a limited, non-exclusive, worldwide, royalty-free licence to process, store, and transmit User Content solely to the extent necessary to provide the Services, including transmitting relevant User Content to the AI Providers for the purpose of generating AI Services responses, in accordance with the Privacy Policy.</p>
     </section>
 
     <section class="section" id="s11">
@@ -466,7 +471,7 @@
       <p>The Service Provider does not guarantee the accuracy, reliability, or suitability of AI-Generated Content for any particular training goal, health status, or individual circumstance. AI-Generated Content reflects the output of probabilistic algorithms and is inherently subject to error and limitation. The Service Provider expressly disclaims liability for any decisions made by the User in reliance on AI-Generated Content.</p>
 
       <h3 class="sub-title">11.4 Third-Party Services</h3>
-      <p>The Service Provider shall not be liable for any interruption, failure, or degradation of the Services caused by the unavailability or malfunction of third-party infrastructure, including Supabase Inc. backend services, Google Cloud / Gemini API, or the Google Play Store and Apple App Store distribution platforms.</p>
+      <p>The Service Provider shall not be liable for any interruption, failure, or degradation of the Services caused by the unavailability or malfunction of third-party infrastructure, including Supabase Inc. backend services, the AI Providers (DeepSeek API and Google Cloud / Gemini API), RevenueCat, Inc., or the Google Play Store and Apple App Store distribution platforms.</p>
 
       <h3 class="sub-title">11.5 Aggregate Liability Cap</h3>
       <p>To the maximum extent permitted by applicable mandatory law, the total aggregate liability of the Service Provider to the User for all claims arising under or in connection with these Terms, whether in contract, tort, or otherwise, shall not exceed the total amount paid by the User for the Premium Plan subscription in the twelve (12) calendar months immediately preceding the event giving rise to the claim. Where the User is on the Free Plan, the Service Provider's liability is excluded to the fullest extent permitted by law.</p>
@@ -499,7 +504,7 @@
       <p>The User acknowledges that the Services consist of digital content and digital services that are supplied with the Consumer's express prior consent and acknowledgment that the right of withdrawal will be lost once the Service Provider has fully performed the service. By requesting immediate access to the Application upon registration, the Consumer expressly consents to the commencement of the Services before the withdrawal period expires and acknowledges that the right of withdrawal will thereby be lost upon full performance. This does not affect the Consumer's right of withdrawal in respect of a Premium Plan subscription in the limited circumstances where the subscription has not yet commenced.</p>
 
       <h3 class="sub-title">13.3 Withdrawal Procedure</h3>
-      <p>To exercise the right of withdrawal (where applicable), the Consumer must submit an unequivocal statement of withdrawal to the Service Provider at the e-mail address stated in Section 3, within the applicable withdrawal period. The Consumer may use the following model withdrawal form:</p>
+      <p>To exercise the right of withdrawal (where applicable), the Consumer must submit an unequivocal statement of withdrawal to the Service Provider at the e-mail address stated in Section 2, within the applicable withdrawal period. The Consumer may use the following model withdrawal form:</p>
       <div class="model-form">
         <strong>Model Withdrawal Form</strong><br>
         To: Kamil Mazurkiewicz, kmdevworks.contact@gmail.com<br><br>
@@ -516,7 +521,7 @@
       <h2 class="sec-title"><span class="sec-num">14</span>Suspension and Termination</h2>
 
       <h3 class="sub-title">14.1 Termination by User</h3>
-      <p>The User may terminate the Agreement and delete their Account at any time through the Account settings interface within the Application, or by sending a written termination notice to the Service Provider's e-mail address. Account deletion requests will be processed within thirty (30) calendar days. The termination of the Agreement does not automatically cancel any active Premium Plan subscription, which must be cancelled separately through the relevant platform's subscription management system.</p>
+      <p>The User may terminate the Agreement and delete their Account at any time through the Account settings interface within the Application, or by sending a written termination notice to the Service Provider's e-mail address. Account deletion requests will be processed within thirty (30) calendar days. Deleting the Account or terminating the Agreement does not automatically cancel an active Premium Plan subscription, which is managed exclusively by the relevant platform. For this reason, where the User has an active, auto-renewing Premium Plan subscription, the in-app Account deletion function is available only after the User has cancelled that subscription through the relevant platform's subscription management system, so that the User is not charged for a subscription linked to a deleted Account.</p>
 
       <h3 class="sub-title">14.2 Suspension or Termination by Service Provider</h3>
       <p>The Service Provider reserves the right to suspend or permanently terminate a User's Account, with or without notice, in the event of: (i) a material breach of these Terms by the User, including prohibited conduct listed in Section 9; (ii) non-payment of subscription fees; (iii) suspected fraudulent activity or abuse of the Services; (iv) a requirement of applicable law or a competent authority.</p>
@@ -570,7 +575,7 @@
       <p>The User may not assign or transfer any rights or obligations under the Agreement without the prior written consent of the Service Provider. The Service Provider may assign its rights and obligations under these Terms to an affiliate or in connection with a merger, acquisition, or sale of all or substantially all of its assets, provided that the assignee assumes all obligations under these Terms and the User is notified thereof.</p>
 
       <h3 class="sub-title">18.5 Force Majeure</h3>
-      <p>The Service Provider shall not be liable for any failure or delay in performance of its obligations under these Terms to the extent that such failure or delay is caused by events beyond the Service Provider's reasonable control, including acts of God, government actions, war, civil unrest, pandemic, or failure of third-party infrastructure (including Supabase or Google Cloud services).</p>
+      <p>The Service Provider shall not be liable for any failure or delay in performance of its obligations under these Terms to the extent that such failure or delay is caused by events beyond the Service Provider's reasonable control, including acts of God, government actions, war, civil unrest, pandemic, or failure of third-party infrastructure (including Supabase, the AI Providers, RevenueCat, or Google Cloud services).</p>
 
       <h3 class="sub-title">18.6 Language</h3>
       <p>These Terms are executed in the English language. In the event of any conflict between an English-language version and any translation thereof, the English-language version shall prevail, without prejudice to any mandatory language requirements imposed by applicable law in the User's jurisdiction.</p>
@@ -580,7 +585,7 @@
 
   <footer class="doc-footer">
     <span>SpringBoard Terms of Service</span>
-    <span>Effective: 6 September 2026</span>
+    <span>Effective: 4 November 2026</span>
     <span>Contact: <a href="mailto:kmdevworks.contact@gmail.com">kmdevworks.contact@gmail.com</a></span>
   </footer>
 
